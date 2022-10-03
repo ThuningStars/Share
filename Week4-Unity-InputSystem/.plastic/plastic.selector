@@ -1,0 +1,4 @@
+repository "Week4-Unity-InputSystem@thuningstars@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"
