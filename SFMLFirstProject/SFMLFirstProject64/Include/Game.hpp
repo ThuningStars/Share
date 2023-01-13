@@ -31,6 +31,7 @@ private:
 	//Create a graphical text to display
 	sf::Font mFont;
 	sf::Text mText;
+	sf::Text mText2;
 
 	sf::Music mMusic;
 #pragma endregion

@@ -41,6 +41,12 @@ Game::Game()
 
 	//mText.setRotation(45);
 
+	mText2.setString("Bye SFML");
+	mText2.setFont(mFont);
+	mText2.setPosition(550.f, 520.f);
+	mText2.setCharacterSize(50);
+	mText2.setFillColor(sf::Color::White);
+
 
 	mMusic.openFromFile("Media/Sound/nice_music.ogg");
 	//Play the music
@@ -88,6 +94,9 @@ void Game::render()
 	mWindow.draw(mBackground);
 	//Draw the string
 	mWindow.draw(mText);
+
+	mWindow.draw(mText2);
+
 #pragma endregion
 
 	//Update the window
