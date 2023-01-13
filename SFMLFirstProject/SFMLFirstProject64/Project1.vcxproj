@@ -18,6 +18,15 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\SFMLFirstProject\SFMLFirstProject64\Source\game.cpp" />
+    <ClCompile Include="..\..\..\SFMLFirstProject\SFMLFirstProject64\Source\Game2.cpp" />
+    <ClCompile Include="..\..\..\SFMLFirstProject\SFMLFirstProject64\Source\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Game.hpp" />
+    <ClInclude Include="Include\Game2.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
