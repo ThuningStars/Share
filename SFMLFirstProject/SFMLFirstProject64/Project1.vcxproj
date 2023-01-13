@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Game.cpp" />
-    <ClCompile Include="Source\main.cpp" />
+    <ClInclude Include="Include\Game.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Game.hpp" />
+    <ClCompile Include="Source\Game.cpp" />
+    <ClCompile Include="Source\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

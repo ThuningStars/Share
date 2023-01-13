@@ -16,24 +16,31 @@ private:
 	void					update();
 	void					render();
 
+#pragma region step1
+
+	void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+#pragma endregion
 
 private:
 
 	sf::RenderWindow		mWindow;
-	sf::CircleShape			mPlayer;
+	sf::Sprite				mPlayer;
 	sf::Sprite				mBackground;
 	sf::Texture				mTexture;
-
-#pragma region Step 1
-	//Set the Icon
-	sf::Image mIcon;
+	sf::Texture				mAirplaneTexture;
+	sf::Image				mIcon;
 
 	//Create a graphical text to display
 	sf::Font mFont;
 	sf::Text mText;
-	sf::Text mText2;
 
 	sf::Music mMusic;
-#pragma endregion
 
+#pragma region step2
+
+	bool					mIsMovingUp;
+	bool					mIsMovingDown;
+	bool					mIsMovingRight;
+	bool					mIsMovingLeft;
+#pragma endregion
 };
