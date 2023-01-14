@@ -13,15 +13,17 @@ public:
 
 private:
 	void					processEvents();
-	void					update();
+	void					update(sf::Time elapsedTime);
 	void					render();
 
 #pragma region step1
-
+	void					updateStatistics(sf::Time elapsedTime);
 	void					handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 #pragma endregion
 
 private:
+	static const float		PlayerSpeed;
+	static const sf::Time	TimePerFrame;
 
 	sf::RenderWindow		mWindow;
 	sf::Sprite				mPlayer;
@@ -36,8 +38,12 @@ private:
 
 	sf::Music mMusic;
 
-#pragma region step2
+#pragma region step2		
 
+	sf::Text				mStatisticsText;
+	sf::Time				mStatisticsUpdateTime;
+
+	std::size_t				mStatisticsNumFrames;
 	bool					mIsMovingUp;
 	bool					mIsMovingDown;
 	bool					mIsMovingRight;

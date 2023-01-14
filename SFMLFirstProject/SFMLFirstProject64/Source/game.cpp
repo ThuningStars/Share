@@ -1,5 +1,7 @@
 #include "Game.hpp"
 
+const float Game::PlayerSpeed = 100.f;
+const sf::Time Game::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Game::Game()
 	: mWindow(sf::VideoMode(800, 600), "SFML Application", sf::Style::Close)
@@ -10,6 +12,9 @@ Game::Game()
 	, mMusic()
 	, mFont()
 	, mIcon()
+	, mStatisticsText()
+	, mStatisticsUpdateTime()
+	, mStatisticsNumFrames(0)
 #pragma region step3
 	, mIsMovingUp(false)
 	, mIsMovingDown(false)
@@ -48,6 +53,9 @@ Game::Game()
 	mText.setCharacterSize(50);
 	mText.setFillColor(sf::Color::Black);
 
+	mStatisticsText.setFont(mFont);
+	mStatisticsText.setPosition(5.f, 500.f);
+	mStatisticsText.setCharacterSize(30);
 
 	mMusic.openFromFile("Media/Sound/nice_music.ogg");
 	//Play the music
@@ -59,11 +67,21 @@ Game::Game()
 
 void Game::run()
 {
-
+	sf::Clock clock;
+	sf::Time timeSinceLastUpdate = sf::Time::Zero;
 	while (mWindow.isOpen())
 	{
-		processEvents();
-		update();
+		sf::Time elapsedTime = clock.restart();
+		timeSinceLastUpdate += elapsedTime;
+		while (timeSinceLastUpdate > TimePerFrame)
+		{
+			timeSinceLastUpdate -= TimePerFrame;
+
+			processEvents();
+			update(TimePerFrame);
+		}
+
+		updateStatistics(elapsedTime);
 		render();
 	}
 }
@@ -97,7 +115,7 @@ void Game::processEvents()
 	}
 }
 
-void Game::update()
+void Game::update(sf::Time elapsedTime)
 {
 #pragma region step 5
 
@@ -105,15 +123,15 @@ void Game::update()
 
 	sf::Vector2f movement(0.f, 0.f);
 	if (mIsMovingUp)
-		movement.y -= 1.f;
+		movement.y -= PlayerSpeed;
 	if (mIsMovingDown)
-		movement.y += 1.f;
+		movement.y += PlayerSpeed;
 	if (mIsMovingLeft)
-		movement.x -= 1.f;
+		movement.x -= PlayerSpeed;
 	if (mIsMovingRight)
-		movement.x += 1.f;
+		movement.x += PlayerSpeed;
 
-	mPlayer.move(movement);
+	mPlayer.move(movement * elapsedTime.asSeconds());
 
 #pragma endregion
 }
@@ -125,6 +143,7 @@ void Game::render()
 	mWindow.draw(mBackground);
 	mWindow.draw(mPlayer);
 	mWindow.draw(mText);
+	mWindow.draw(mStatisticsText);
 
 	//Update the window
 	mWindow.display();
@@ -132,6 +151,21 @@ void Game::render()
 
 #pragma region step4
 
+void Game::updateStatistics(sf::Time elapsedTime)
+{
+	mStatisticsUpdateTime += elapsedTime;
+	mStatisticsNumFrames += 1;
+
+	if (mStatisticsUpdateTime >= sf::seconds(1.0f))
+	{
+		mStatisticsText.setString(
+			"Frames / Second = " + std::to_string(mStatisticsNumFrames) + "\n" +
+			"Time / Update = " + std::to_string(mStatisticsUpdateTime.asMicroseconds() / mStatisticsNumFrames) + "us");
+
+		mStatisticsUpdateTime -= sf::seconds(1.0f);
+		mStatisticsNumFrames = 0;
+	}
+}
 
 
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed)
