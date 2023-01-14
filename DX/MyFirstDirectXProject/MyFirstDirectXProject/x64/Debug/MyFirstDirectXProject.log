@@ -1,0 +1,10 @@
+﻿  Camera.cpp
+  d3dApp.cpp
+  d3dUtil.cpp
+  DDSTextureLoader.cpp
+  GameTimer.cpp
+  GeometryGenerator.cpp
+  MathHelper.cpp
+  BoxApp.cpp
+  Generating Code...
+  MyFirstDirectXProject.vcxproj -> C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\x64\Debug\MyFirstDirectXProject.exe

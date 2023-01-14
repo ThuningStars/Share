@@ -1,0 +1,24 @@
+﻿  d3dApp.cpp
+C:\Users\101265108\Desktop\Share\DX\Common\d3dApp.cpp(198): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\d3dApp.cpp(215): error C2102: '&' requires l-value
+  d3dUtil.cpp
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(30,5): warning C4244: 'argument': conversion from 'std::streamoff' to 'SIZE_T', possible loss of data
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(48): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(58): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(70,32): warning C4244: '=': conversion from 'UINT64' to 'LONG_PTR', possible loss of data
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(76): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\d3dUtil.cpp(79): error C2102: '&' requires l-value
+  DDSTextureLoader.cpp
+C:\Users\101265108\Desktop\Share\DX\Common\DDSTextureLoader.cpp(1273): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\DDSTextureLoader.cpp(1292): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\DDSTextureLoader.cpp(1294): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\DDSTextureLoader.cpp(1305): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\Common\DDSTextureLoader.cpp(1311): error C2102: '&' requires l-value
+  GameTimer.cpp
+  BoxApp.cpp
+C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\MyFirstDirectXProject\BoxApp.cpp(197): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\MyFirstDirectXProject\BoxApp.cpp(204): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\MyFirstDirectXProject\BoxApp.cpp(205): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\MyFirstDirectXProject\BoxApp.cpp(189): error C2102: '&' requires l-value
+C:\Users\101265108\Desktop\Share\DX\MyFirstDirectXProject\MyFirstDirectXProject\BoxApp.cpp(215): error C2102: '&' requires l-value
+  Generating Code...
